@@ -1,1 +1,3 @@
 /opt/logstash/bin/logstash --path.data /tmp/logstash/data -e 'input { stdin { } } output { stdout {} }'
+#read configuration file
+/opt/logstash/bin/logstash --path.data /tmp/logstash/data -f '/usr/share/logstash/config/tmax115v1.conf'
