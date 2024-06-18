@@ -8,3 +8,6 @@ http://localhost:9200/_cluster/health?pretty=true
 
 #to run conf files in logstash
 /opt/logstash/bin/logstash --path.data /tmp/logstash/data -f '/usr/share/logstash/config/tmax115v1.conf'
+
+#to check indexes
+https://localhost:9200/_cat/indices?v
