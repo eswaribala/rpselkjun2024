@@ -9,4 +9,4 @@ LABEL "com.boa.customerapi"="customer-api"
 LABEL version=1.0-SNAPSHOT
 COPY --from=build target/datapublisher-0.0.1-SNAPSHOT.jar datapublisher-0.0.1-SNAPSHOT.jar
 EXPOSE 7072
-ENTRYPOINT ["java","-jar","customerapidocker-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","datapublisher-0.0.1-SNAPSHOT.jar"]
