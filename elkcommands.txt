@@ -5,3 +5,6 @@ http://localhost:9200/_nodes/stats/os,process
 #process statistics
 http://localhost:9200/_nodes/127.0.0.1/stats/process
 http://localhost:9200/_cluster/health?pretty=true
+
+#to run conf files in logstash
+/opt/logstash/bin/logstash --path.data /tmp/logstash/data -f '/usr/share/logstash/config/tmax115v1.conf'
