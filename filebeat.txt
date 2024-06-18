@@ -1,3 +1,9 @@
 #to list all the modules
 
 filebeat modules list  --path.data /tmp/logstash/data  -strict.perms=false
+
+
+#run the filebeat.yml and module logs
+
+#docker file beat
+filebeat -c /usr/share/filebeat/filebeat.yml -e -d "*"  --path.data /tmp/logstash/data  -strict.perms=false
