@@ -1,0 +1,10 @@
+#goto ubuntu
+
+sudo chmod 777 home
+
+#copy files from downloads to home
+
+# from home folder
+
+sudo docker cp <filename csv> <containerid>:/usr/share/logstash/ingest_data/
+sudo docker cp <filename conf> <containerid>:/usr/share/logstash/config/
