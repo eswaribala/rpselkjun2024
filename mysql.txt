@@ -1,1 +1,11 @@
 docker run --name eric-MySQL  --network elastic -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=tradingdb2020 -e MYSQL_USER=demo_user -e MYSQL_PASSWORD=demo_pass -d mysql
+#run mysql client
+docker exec -it <containerid> bash
+#mysql -p
+#supply the password
+
+#show databases;
+#use <dbname>;
+create table stock(stock_id int primary key, name varchar(100), stock_value int);
+insert into stock values(1,'tcs',3450);
+select * from stock;
