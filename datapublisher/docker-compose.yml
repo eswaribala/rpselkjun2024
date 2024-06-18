@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+
+  publisher-app:
+    image: datapublisher-app
+    build:
+      context: ./
+      dockerfile: dockerfile
+
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 15
+        window: 50s
+    ports:
+       #- 8060-8070:7070
+        - 7072:7072
+    volumes:
+      - /data/compose-app
+    #networks:
+      #- boanetwork   
+    
+
+### put all the networks here
+#networks:
+  #boanetwork:
+networks: 
+  default: 
+    external: 
+      name: elastic
+
+  
