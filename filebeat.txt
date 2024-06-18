@@ -1,0 +1,3 @@
+#to list all the modules
+
+filebeat modules list  --path.data /tmp/logstash/data  -strict.perms=false
