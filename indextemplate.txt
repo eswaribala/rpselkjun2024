@@ -1,0 +1,60 @@
+#to check default template
+GET /_template
+
+#to check metric beat template
+GET /_template/metric_beat
+
+
+#create new template
+
+PUT /_index_template/eric_template
+{
+  "index_patterns" : ["eric*", "chn-eric*"],
+  "priority" : 1,
+  "template": {
+    "settings" : {
+        "number_of_shards" : 2,
+        "number_of_replicas": 1
+    },
+    "mappings":{
+      "properties":{
+        "sno":{
+          "type":"long"
+        },
+        "date_of_record":{
+          "type":"date",
+	  "format":"yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis||dd-MM-yyyy"
+
+        },
+        "min_data":{
+          "type":"float"
+        },
+	"max_data":{
+          "type":"float"
+        }
+
+      }
+    }
+  },
+  "version": 1.0
+}
+
+
+#check the template
+GET /_index_template/eric_template
+
+#delete the template
+DELETE /_index_template/eric_template
+
+#create document with template
+PUT /eric_stock
+#retrieve document
+GET /eric_stock
+
+POST eric_stock/_doc/1
+{
+  "sno":1,
+  "date_of_record":"11-08-2023",
+  "min_data":78.5,
+  "max_data":80.7
+}
