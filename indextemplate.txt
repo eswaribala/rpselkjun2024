@@ -23,7 +23,7 @@ PUT /_index_template/eric_template
         },
         "date_of_record":{
           "type":"date",
-	  "format":"yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis||dd-MM-yyyy"
+	  "format":"yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis||dd-MM-yyyy||dd/MM/yyyy"
 
         },
         "min_data":{
