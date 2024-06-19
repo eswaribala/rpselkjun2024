@@ -43,7 +43,7 @@ PUT /_index_template/eric_template
 #check the template
 GET /_index_template/eric_template
 
-#delete the template
+#delete the template (optional, don't delete)
 DELETE /_index_template/eric_template
 
 #create document with template
