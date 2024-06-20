@@ -24,6 +24,20 @@ GET orders/_search
 }
 
 }
+
+GET orders/_search
+{
+"query": {
+"term": {
+    "status": {
+      "value": "NUL"
+    }
+  }
+}
+
+}
+
+
 GET orders/_search
 {
 "query": {
