@@ -1,0 +1,29 @@
+#create alias for indexing
+
+POST /_aliases
+{
+    "actions" : [
+        { "add" : { "index" : "inv-shipping", "alias" : "shipping" } }
+    ]
+}
+
+#retrieve index by alias
+
+
+GET shipping
+
+
+# remove alias
+POST /_aliases
+{
+    "actions" : [
+        { "add" : { "index" : "inv-shipping", "alias" : "shipping2023" } }
+    ]
+}
+
+POST /_aliases
+{
+    "actions" : [
+        { "remove": { "index" : "inv-shipping", "alias" : "shipping2023" } }
+    ]
+}
