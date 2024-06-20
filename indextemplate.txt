@@ -39,6 +39,40 @@ PUT /_index_template/eric_template
   "version": 1.0
 }
 
+#update
+PUT /_index_template/eric_template
+{
+  "index_patterns": [
+    "eric*",
+    "chn-eric*"
+  ],
+  "priority": 1,
+  "template": {
+    "settings": {
+      "number_of_shards": 2,
+      "number_of_replicas": 1
+    },
+    "mappings": {
+       "_source" : { "enabled" : false },
+      "properties": {
+        "sno": {
+          "type": "long"
+        },
+        "date_of_record": {
+          "type": "date",
+          "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis||dd-MM-yyyy||dd/MM/yyyy"
+        },
+        "min_data": {
+          "type": "float"
+        },
+        "max_data": {
+          "type": "float"
+        }
+      }
+    }
+  },
+  "version": 1
+}
 
 #check the template
 GET /_index_template/eric_template
