@@ -24,7 +24,19 @@ GET orders/_search
 }
 
 }
+GET orders/_search
+{
+"query": {
+"range": {
+  "purchased_at": {
+    "gte": "2016-10-01"
+    
+  }
+}
 
+}
+
+}
 
 GET bulkbooks/_search
 {
