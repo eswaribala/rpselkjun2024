@@ -60,6 +60,9 @@ PUT _ilm/policy/hot-warm-cold-delete-60days
     }
   }
 }
+#retrieve policy
+GET _ilm/policy/hot-warm-cold-delete-60days
+
 PUT _component_template/settings_component_template
 {
   "template":{
