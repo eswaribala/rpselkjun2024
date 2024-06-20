@@ -54,3 +54,19 @@ PUT _index_template/composed_salary_template
    
   ]
 }
+
+#create index
+
+#create document with template
+PUT /emp_salary_ibm
+#retrieve document
+GET /emp_salary_ibm
+
+POST emp_salary_ibm/_doc/1
+{
+  "work_year":1,
+  "exp_level":"2",
+  "emp_type":"SE",
+  "salary": 70000
+}
+
