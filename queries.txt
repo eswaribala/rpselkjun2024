@@ -1,5 +1,18 @@
 #term query
 #term internally uses tokenizer with lowercase filter
+#curl query
+curl  --cacert /tmp/ca.crt -u elastic:changeme  -H "Content-Type: application/x-ndjson" -XGET "https://localhost:9200/orders/_search?pretty" -d ' { "query": {
+"range": {
+  "lines.amount": {
+    "gte": 10,
+    "lte": 60
+  }
+}
+
+} } '
+
+
+
 GET bulkbooks/_search
 {
 "query": {
