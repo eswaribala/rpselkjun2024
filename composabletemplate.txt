@@ -45,7 +45,7 @@ PUT _component_template/aliases_component_template
 PUT _index_template/composed_salary_template
 {
   "index_patterns": [
-    "*salary"
+    "emp_salary*"
   ],
   "priority": 500,
   "composed_of": [
