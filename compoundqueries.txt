@@ -337,6 +337,51 @@ GET /products/_search
 }
 ```
 
+GET products/_search
+{
+"query": {
+"bool": {
+  "should": [
+    {
+"match": {
+        "name": "Baby Corn"
+      }
+      
+    },
+      {
+        "match": {
+        "name": "Onions - Green"
+      }
+      
+    }
+  ],
+  
+  "must": [
+    {
+     "term": {
+        "tags.keyword": {
+          "value": "Vegetable"
+        }
+      }
+      
+    }
+  ],
+  "must_not": [
+    {
+"term": {
+        "tags.keyword": {
+          "value": "Beets"
+        }
+      }
+    }
+  ]
+  
+}
+
+
+}
+}
+
 **SQL:** `SELECT * FROM products  WHERE tags IN ("Alcohol")`
 
 ## `must_not`
