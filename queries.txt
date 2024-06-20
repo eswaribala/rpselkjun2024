@@ -90,6 +90,21 @@ GET bulkbooks/_search
   }
 }
 }
+GET orders/_search
+{
+"query": {
+"range": {
+  "purchased_at": {
+    "gte": "2016-10-14T11:44:29Z||-2m"
+    
+  }
+}
+
+}
+
+}
+
+
 
 #field existence
 GET bulkbooks/_search
