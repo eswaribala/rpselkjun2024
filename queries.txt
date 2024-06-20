@@ -11,6 +11,19 @@ curl  --cacert /tmp/ca.crt -u elastic:changeme  -H "Content-Type: application/x-
 
 } } '
 
+GET orders/_search
+{
+"query": {
+"range": {
+  "purchased_at": {
+    "gte": "now-1d/d"
+    
+  }
+}
+
+}
+
+}
 
 
 GET bulkbooks/_search
