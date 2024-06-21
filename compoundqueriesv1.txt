@@ -246,6 +246,23 @@ POST /bookdb_index/book/_search
     "_source": [ "title", "summary", "publish_date" ]
 }
 --------------------------------------------------
+GET recipes/_search
+{
+  "query": {
+    "match_phrase": {
+      "title": {
+        "query": " Fast Easy  Pasta and With Blistered Cherry",
+        "slop": 3 
+      }
+    }
+  }
+}
+
+-----------------------------------------------------------------------
+
+
+
+
 terms query
 POST /bookdb_index/book/_search
 {
