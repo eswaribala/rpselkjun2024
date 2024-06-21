@@ -1,0 +1,4 @@
+sudo apt install rsyslog
+sudo systemctl enable rsyslog.service
+sudo systemctl start rsyslog.service
+sudo systemctl status rsyslog.service
