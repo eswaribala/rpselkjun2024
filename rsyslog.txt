@@ -3,7 +3,7 @@ sudo systemctl enable rsyslog.service
 sudo systemctl start rsyslog.service
 sudo systemctl status rsyslog.service
 #docker 
-docker run --network elastic rsyslog/syslog_appliance_alpine
+docker run --name=eric-rsyslog  -p 5514:5514 --network elastic rsyslog/syslog_appliance_alpine
 
 #create syslog.conf
 #run in logstash
